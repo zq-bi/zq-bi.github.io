@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>畢彰謙的部落格 - Zhangqian Bi's Blog</title>
+    <style>
+        body {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: "Microsoft JhengHei", "PingFang TC", "Heiti TC", "SimHei", "Arial Unicode MS", sans-serif;
+            margin: 0;
+            padding: 60px 40px 40px 40px;
+            background-color: white;
+            min-height: 100vh;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: none;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: transparent;
+            padding: 60px;
+            box-shadow: none;
+            border-radius: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 4em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 3em;
+        }
+
+        .author-name {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+
+        .author-title {
+            font-size: 1.4em;
+            color: #6c757d;
+            margin-bottom: 1em;
+        }
+
+        .author-info {
+            font-size: 1.2em;
+            color: #495057;
+            line-height: 2;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 1em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            color: #495057;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 2.2;
+            margin-bottom: 1.2em;
+            text-indent: 2em;
+            color: #2c3e50;
+        }
+
+        .section {
+            margin: 3em 0;
+            padding: 2.5em;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .research-area {
+            background-color: #e8f4fd;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 6px;
+            border: 1px solid #b3d9ff;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .english-text {
+            font-family: "Times New Roman", "Georgia", serif;
+            font-style: italic;
+        }
+
+        .contact-info {
+            background-color: #d4edda;
+            padding: 1.5em;
+            margin: 2em 0;
+            border-radius: 6px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .publication {
+            background-color: #f8f9fa;
+            padding: 2em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+
+        .publication-authors {
+            color: #6c757d;
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+        }
+
+        .publication-venue {
+            color: #495057;
+            font-style: italic;
+        }
+
+        .publication-year {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .award {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        .experience-item {
+            background-color: #f1f3f4;
+            padding: 2em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+
+        .experience-period {
+            color: #6c757d;
+            font-size: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+            margin: 1em 0;
+        }
+
+        .skill-category {
+            background-color: #e9ecef;
+            padding: 1em;
+            border-radius: 4px;
+        }
+
+        .skill-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 0.5em;
+        }
+
+        .tcy {
+            text-combine-upright: all;
+        }
+
+        .upright {
+            text-orientation: upright;
+        }
+
+        .sideways {
+            text-orientation: sideways;
+        }
+
+        .mixed {
+            text-orientation: mixed;
+        }
+
+        .publication {
+            background-color: #d4edda !important;
+        }
+
+        .publications-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Here to change the number of columns */
+            gap: 3em 6em;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 1000px;
+            padding: 2em 5em; /* Here to change the padding of the container to the top and right*/
+            writing-mode: horizontal-tb;
+            text-orientation: mixed;
+            width: 100%;
+            min-width: 1500px; /* Here to change the width of the container */
+        }
+
+        .publications-container .publication {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Custom scrollbar for horizontal scrolling */
+        ::-webkit-scrollbar {
+            height: 12px;
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Hide vertical scrollbar */
+        ::-webkit-scrollbar:vertical {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="author-name">畢彰謙</div>
+            <div class="author-title">Zhangqian Bi</div>
+            <div class="author-info">
+                華中科技大學博士班三年級學生<br>
+                Third-year PhD Student at Huazhong University of Science and Technology<br>
+                Email: zq-bi@outlook.com
+            </div>
+        </div>
+
+        <h1>學術履歷 Academic Profile</h1>
+        <p>歡迎來到我的個人學術部落格！我是畢彰謙（Zhangqian Bi），目前就讀於華中科技大學博士班三年級，專注於程式合成與跨領域技術研究。</p>
+
+        <div class="section">
+            <h2>教育背景 Education</h2>
+            <div class="experience-item">
+                <div class="experience-title">華中科技大學 Huazhong University of Science and Technology</div>
+                <div class="experience-period">公曆2022年9月 - 至今 | 2022.09 - Present</div>
+                <p>計算機科學與技術博士班學生<br>
+                Ph.D. Student in Computer Science and Technology<br>
+                指導教授: 金海教授、萬瑤教授<br>
+                Supervisors: Prof. Hai Jin, Prof. Yao Wan</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">華中科技大學 Huazhong University of Science and Technology</div>
+                <div class="experience-period">公曆2018年7月 - 2022年6月 | 2018.07 - 2022.06</div>
+                <p>計算機科學與技術學士學位<br>
+                Bachelor of Computer Science and Technology (Honor Graduate)<br>
+                指導教授: 萬瑤教授、陸楓教授<br>
+                Supervisors: Prof. Yao Wan, Prof. Feng Lu</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>研究領域 Research Areas</h2>
+            <div class="research-area">
+                <h3>主要研究方向 Primary Research Interests</h3>
+                <ul style="font-size: 1.2em; line-height: 2; margin-left: 2em;">
+                    <li>程式合成 Program Synthesis</li>
+                    <li>大型語言模型 Large Language Models</li>
+                    <li>科學人工智能 AI for Science (AI4S)</li>
+                    <li>跨領域技術研究 Interdisciplinary Research</li>
+                    <li>代碼智能 Code Intelligence</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>學術論文 Publications</h2>
+            
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-title">How to Select Pre-trained Code Models for Reuse? A Learning Perspective</div>
+                    <div class="publication-authors"><b>Zhangqian Bi</b>, Yao Wan, Zhaoyang Chu, Yufei Hu, Junyi Zhang, Hongyu Zhang, Guandong Xu, Hai Jin</div>
+                    <div class="publication-venue">IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)</div>
+                    <div class="publication-year">2025 <span class="award">CORE-A, IEEE TCSE Distinguished Paper Award</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">Hierarchically Encapsulated Representation for Protocol Design in Self-Driving Labs</div>
+                    <div class="publication-authors">Yu-Zhe Shi, Mingchen Liu, Fanxu Meng, Qiao Xu, <b>Zhangqian Bi</b>, Kun He, Lecheng Ruan, Qining Wang</div>
+                    <div class="publication-venue">International Conference on Learning Representations (ICLR)</div>
+                    <div class="publication-year">2025 <span class="award">CCF-A</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">Iterative Refinement of Project-Level Code Context for Precise Code Generation with Compiler Feedback</div>
+                    <div class="publication-authors"><b>Zhangqian Bi</b>, Yao Wan, Zheng Wang, Hongyu Zhang, Batu Guan, Fangxin Lu, Yulei Sui, Hai Jin, Xuanhua Shi</div>
+                    <div class="publication-venue">Annual Meeting of the Association for Computational Linguistics (ACL)</div>
+                    <div class="publication-year">2024 <span class="award">CCF-A</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">Deep Learning for Code Intelligence: Survey, Benchmark, and Toolkit</div>
+                    <div class="publication-authors">Yao Wan, <b>Zhangqian Bi</b>, Yang He, Jianguo Zhang, Hongyu Zhang, Yulei Sui, Guandong Xu, Hai Jin, Philip Yu</div>
+                    <div class="publication-venue">ACM Computing Surveys</div>
+                    <div class="publication-year">2024 <span class="award">JCR Q1, IF 26.3</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">CodeIP: A Grammar-Guided Multi-Bit Watermark for Large Language Models of Code</div>
+                    <div class="publication-authors">Batu Guan, Yao Wan, <b>Zhangqian Bi</b>, Zheng Wang, Hongyu Zhang, Pan Zhou, Lichao Sun</div>
+                    <div class="publication-venue">Empirical Methods in Natural Language Processing (EMNLP)</div>
+                    <div class="publication-year">2024 <span class="award">CORE-A*</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">AutoDSL: Automated domain-specific language design for structural representation of procedures with constraints</div>
+                    <div class="publication-authors">Yuzhe Shi, Haofei Hou, <b>Zhangqian Bi</b>, Fanxu Meng, Xiang Wei, Lecheng Ruan, Qining Wang</div>
+                    <div class="publication-venue">Annual Meeting of the Association for Computational Linguistics (ACL)</div>
+                    <div class="publication-year">2024 <span class="award">CCF-A</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">Expert-level protocol translation for self-driving labs</div>
+                    <div class="publication-authors">Yuzhe Shi, Fanxu Meng, Haofei Hou, <b>Zhangqian Bi</b>, Qiao Xu, Lecheng Ruan, Qining Wang</div>
+                    <div class="publication-venue">Neural Information Processing Systems (NeurIPS)</div>
+                    <div class="publication-year">2024 <span class="award">CCF-A</span></div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">NaturalCC: an open-source toolkit for code intelligence</div>
+                    <div class="publication-authors">Yao Wan, Yang He, <b>Zhangqian Bi</b>, Jian-Guo Zhang, Yulei Sui, Hai Jin, Guandong Xu, Caiming Xiong, Philip S. Yu</div>
+                    <div class="publication-venue">The International Conference on Software Engineering (ICSE)</div>
+                    <div class="publication-year">2022 <span class="award">CCF-A, Demo Track</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>研究經歷 Research Experience</h2>
+            
+              <div class="experience-item">
+                <div class="experience-title">上海交通大學醫學院附屬第九人民醫院 Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine</div>
+                <div class="experience-period">公曆2024年9月 - 至今 | 2024.09 - Present</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">北京大學工學院 School of Engineering, Peking University</div>
+                <div class="experience-period">公曆2024年1月 - 2024年8月 | 2024.01 - 2024.08</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">清華大學人工智能產業研究院 Institute for AI Industry Research, Tsinghua University</div>
+                <div class="experience-period">公曆2022年7月 - 2023年7月 | 2022.07 - 2023.07</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">騰訊犀牛鳥專項研究計劃 - NaturalCC工具包 Tencent Rhino-Bird Special Research Program - NaturalCC Toolkit</div>
+                <div class="experience-period">公曆2022年 | 2022</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">騰訊科技有限公司 Tencent Technology Co., Ltd.</div>
+                <div class="experience-period">公曆2022年1月 - 2022年6月 | 2022.01 - 2022.06</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>社群服務 Community Service</h2>
+            <div class="experience-item">
+                <div class="experience-title">湖北省計算機學會競賽委員會技術委員會主席 Chair of Technical Committee, Competition Committee, Hubei Computer Federation</div>
+                <div class="experience-period">公曆2025年4月 - 至今 | 2025.04 - Present</div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">中國計算機學會華中科技大學學生分會輪值主席 Rolling Chair of HUST Student Branch, China Computer Federation</div>
+                <div class="experience-period">公曆2024年5月 - 至今 | 2024.05 - Present</div>
+            </div>
+        </div>
+
+
+        <div class="contact-info">
+            <h3>聯絡資訊 Contact Information</h3>
+            <p><span class="highlight">電子郵件 Email: </span>zq-bi@outlook.com</p>
+            <p><span class="highlight">Google Scholar: </span><a href="https://scholar.google.com/citations?user=dZr-xt0AAAAJ" target="_blank">https://scholar.google.com/citations?user=dZr-xt0AAAAJ</a></p>
+            <p><span class="highlight">呼號 Call Sign: </span>BH6QAP</p>
+            <p><span class="highlight">梅登黑德網格 Maidenhead QTH Locator: </span>OM70FM</p>
+            <p><span class="highlight">通訊地址 Address: </span>湖北省武漢市洪山區珞瑜路1037號</p>
+            <p style="margin-left: 2em;">1037 Luoyu Road, Hongshan District, Wuhan, Hubei, China</p>
+        </div>
+
+
+        <div style="text-align: center; margin-top: 3em; padding-top: 2em; border-top: 2px solid #e9ecef;">
+            <p style="font-size: 1.1em; color: #6c757d;">
+                感謝您的訪問！<br>
+                Thank you for visiting!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Detect if user is on mobile device
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   (window.innerWidth <= 768);
+        }
+
+        // Only apply horizontal scrolling on desktop devices
+        if (!isMobileDevice()) {
+            // Transform vertical scrolling to horizontal scrolling with smooth animation
+            function transformScroll(event) {
+                if (!event.deltaY) {
+                    return;
+                }
+
+                const scrollAmount = (event.deltaY + event.deltaX) * 4;
+                const currentScroll = event.currentTarget.scrollLeft;
+                const targetScroll = currentScroll - scrollAmount;
+                
+                // Smooth scroll to target position
+                smoothScrollTo(event.currentTarget, targetScroll, 300);
+                event.preventDefault();
+            }
+
+            // Smooth scroll function
+            function smoothScrollTo(element, target, duration) {
+                const start = element.scrollLeft;
+                const change = target - start;
+                const startTime = performance.now();
+                
+                function animateScroll(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing function for smooth animation
+                    const easeInOutQuad = progress => {
+                        return progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                    };
+                    
+                    const easedProgress = easeInOutQuad(progress);
+                    element.scrollLeft = start + change * easedProgress;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+
+            // Add event listener to the document
+            var element = document.scrollingElement || document.documentElement;
+            element.addEventListener('wheel', transformScroll, { passive: false });
+
+            // Add smooth scrolling for keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const scrollAmount = 400;
+                
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    smoothScrollTo(element, element.scrollLeft - scrollAmount, 300);
+                } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    smoothScrollTo(element, element.scrollLeft + scrollAmount, 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
