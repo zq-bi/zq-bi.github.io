@@ -1,0 +1,9 @@
+/* 綜合字體子集 CSS */
+/* 包含網頁中所有使用字符的字體文件 */
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_comprehensive.woff2') format('woff2');
+    font-display: swap;
+}
+
