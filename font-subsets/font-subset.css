@@ -1,0 +1,33 @@
+/* 字體分塊 CSS */
+/* 自動生成的字體加載文件 */
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_latin.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_chinese_basic.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_chinese_common.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_chinese_advanced.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JingHuaLaoSongTi';
+    src: url('./JingHuaLaoSongTi_symbols.woff2') format('woff2');
+    font-display: swap;
+}
+
